@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const fs = require("fs");
+
+const PORT = process.env.PORT || 3001;
+
 // Load initial data from the JSON file
 const noteData = require("../db/db.json");
 const dataPath = path.join(__dirname, "../db/db.json");
@@ -53,4 +56,4 @@ app.delete('/api/notes/:id', (req, res) => {
 
 )
 
-app.listen(3009)
+app.listen(PORT)
